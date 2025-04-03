@@ -1,9 +1,25 @@
-data/
-viz/
+# Jupyter Lab
 .ipynb_checkpoints
+*__pycache__
+
+# Data formats
+# docs
 *.xlsx
+*.xls
 *.csv
 *.zip
+*.dbf
+*.prj
+*.shp
+*.shp.xml
+*.xml
+*.shx
+*.txt
+*.cpg
+
+# images
 *.png
 *.svg
+
+# Env helpers
 .env
