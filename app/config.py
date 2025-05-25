@@ -9,6 +9,8 @@ from datetime import datetime
 
 from dotenv import load_dotenv, find_dotenv
 
+from data_gathering import read_sql_data
+
 load_dotenv(find_dotenv())
 
 DEBUG = True
@@ -33,6 +35,10 @@ db_connection = {
 }
 
 today_str = str(datetime.today().date())
+
+pib_mx = read_sql_data(db_connection, 'pib_mx')
+pib_mx.drop("index", axis=1, inplace=True)
+pib_mx["year"] = pib_mx["year"].astype(int)
 
 
 def token_validator(token=token, series=series):
